@@ -13,10 +13,14 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import DocsPage from './pages/Docs';
 import AboutPage from './pages/About';
 import ContactPage from './pages/Contact';
-import HomePage from './pages/Home';
 
 // Sidebar component that will be used across all pages
-const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { theme, toggleTheme } = useTheme();
   
   return (
@@ -35,10 +39,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-indigo-800'} text-white w-64 p-6 flex flex-col h-full`}
         style={{
           transform: isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)',
-          transition: 'transform 0.3s ease-in-out',
-          '@media (min-width: 768px)': {
-            transform: 'translateX(0)'
-          }
+          transition: 'transform 0.3s ease-in-out'
         }}
       >
         <div className="flex items-center justify-between mb-8">
