@@ -1,0 +1,1 @@
+{"version":3,"file":"react-editor.d.ts","sourceRoot":"","sources":["../../../../packages/slate-react/src/plugin/react-editor.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,KAAK,kBAAkB,EAAE,MAAM,WAAW,CAAA;AAE9D;;GAEG;AAEH,MAAM,WAAW,WAAY,SAAQ,SAAS;CAAG;AAEjD,MAAM,WAAW,oBAAqB,SAAQ,kBAAkB;CAAG;AAGnE,eAAO,MAAM,WAAW,EAAE,oBAAgC,CAAA"}

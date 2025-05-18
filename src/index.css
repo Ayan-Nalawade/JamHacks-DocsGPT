@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add custom styles for markdown content */
+.markdown-content strong {
+  font-weight: bold;
+}
+
+.markdown-content h1, 
+.markdown-content h2, 
+.markdown-content h3, 
+.markdown-content h4, 
+.markdown-content h5, 
+.markdown-content h6 {
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1em;
+  margin: 0.5em 0;
+  color: #4b5563;
+}
+
+.markdown-content code {
+  background-color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.markdown-content pre {
+  background-color: #f3f4f6;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+.markdown-content a {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5em;
+}
+
+.markdown-content th {
+  background-color: #f9fafb;
+}
+
+/* Flashcard animations */
+.flashcard-flip {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.flashcard-front,
+.flashcard-back {
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+.flashcard-flipped .flashcard-front {
+  transform: rotateY(180deg);
+}
+
+.flashcard-flipped .flashcard-back {
+  transform: rotateY(0deg);
+}
