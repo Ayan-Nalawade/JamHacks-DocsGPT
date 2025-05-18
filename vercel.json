@@ -7,9 +7,15 @@
   ],
   "routes": [
     {
-      "src": "/old-path",
-      "status": 301,
-      "headers": { "Location": "/new-path" }
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
