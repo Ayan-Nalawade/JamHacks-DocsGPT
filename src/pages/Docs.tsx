@@ -79,7 +79,12 @@ const Docs: React.FC = () => {
         </motion.p>
         
         <motion.form 
-          onSubmit={handleUrlSubmit}
+          onSubmit={(e) => {
+            handleUrlSubmit(e);
+            if (url) {
+              window.location.href = "https://www.docsgpt.tech/host-dashboard";
+            }
+          }}
           className="space-y-4"
           variants={itemVariants}
         >
@@ -99,14 +104,14 @@ const Docs: React.FC = () => {
             />
             {url && (
               <motion.button
-                type="button"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                onClick={() => setUrl('')}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
+          type="button"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+          onClick={() => setUrl('')}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
               >
-                ✕
+          ✕
               </motion.button>
             )}
           </motion.div>
